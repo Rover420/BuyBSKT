@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Navbar = () => {
     return ( 
         <nav className='.nav'>
-            <div className={styles.logo_container}>
+            <div style={{ padding: '0px' }} className={styles.logo_container}>
                 <a href="https://basketcoin.io">
                     <Image className={styles.logo} src={'/logo.png'} width='204' height='43' priority />
                 </a>
