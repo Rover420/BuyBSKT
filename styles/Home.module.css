@@ -1,0 +1,210 @@
+.main {
+  width: 100vw;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.logo_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.logo_container a {
+  height: 43px;
+}
+
+.panelwrapper {
+  display: flex;
+  padding: 1em;
+  flex-direction: column;
+  gap: 1em;
+  background: none rgba(7, 17, 98, 0.75);
+  border: 1px solid rgb(86, 90, 105);
+  box-shadow: rgb(0, 5, 55) 0px 0px 80px 0px;
+  border-radius: 12px;
+  max-width: 350px;
+}
+
+.Type, .Currency {
+  background: black;
+  border-radius: .25em;
+  display: flex;
+  gap: .25em;
+  padding: .25em;
+}
+
+.imgwrapper {
+  min-width: 23px;
+  min-height: 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option {
+  width: calc(50% - 2px);
+  text-align: center;
+  border-radius: .25em;
+  background-color: #1f1d39;
+  padding: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: .3s ease-in-out;
+}
+
+.option > span {
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.option .active {
+  background-color: white;
+  color: black;
+}
+
+.Currency {
+  flex-wrap: wrap;
+}
+
+.Offer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .7em;
+  background-color: white;
+  border-radius: .25em;
+  color: black;
+  text-align: center;
+  gap: 1em;
+}
+
+.Offer > label {
+  text-align: center;
+  margin-top: -2px;
+  color: #666666;
+}
+
+.Offer > input {
+  padding: 7px 4px 4px 4px;
+  border: none;
+  font-size: 18px;
+  width: 40%;
+  text-align: right;
+}
+
+.Offer > input:focus {
+  outline: 2px solid black;
+  border-radius: 3px;
+}
+
+.Buy {
+  background-color: #fbbc21;
+  padding: 1em;
+  color: #1f2937;
+  border-radius: .25em;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.fiat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 8;
+}
+
+.fiat span {
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.fiat .list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 2px;
+  border-radius: 8px;
+  width: 110%;
+  max-height: 0;
+  top: 25px;
+  z-index: 6;
+  padding: 0;
+  transition: .5s;
+}
+
+.fiat .list .opt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: .25em;
+}
+
+.fiat .list .opt:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.fiat .active {
+  max-height: 300px;
+  padding: .5em 0;
+  height: auto;
+}
+
+.selected {
+  background-color: white;
+  color: black;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: #878787;
+  color: #666;
+}
+
+.info {
+  color: #fff9;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media screen and (max-height: 600px) and (min-width: 550px) {
+
+  .panelwrapper {
+      max-width: fit-content;
+  }
+
+  .option {
+      min-width: 120px;
+  }
+
+  .Currency {
+      flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .logo_container {
+    padding-bottom: 30px;
+  }
+}
