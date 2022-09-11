@@ -58,9 +58,6 @@ h2 {
   nav {
     flex-direction: column;
   }
-  .logo_container {
-    padding-bottom: 20px;
-  }
 }
 
 @media screen and (max-width: 900px) {
