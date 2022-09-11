@@ -82,9 +82,9 @@ export default function Home() {
         <meta charSet="utf-8" />
       </Head>
 
-      <div className={styles.wrapper}>
-      <Navbar />
       <div className={styles.main}>
+      <Navbar />
+      <div className={styles.wrapper}>
       <h2>Exchange</h2>
             <div className={styles.panelwrapper}>
                 <div className={styles.Type}>
