@@ -88,11 +88,8 @@ export default function Home() {
       <h2>Wymiana</h2>
             <div className={styles.panelwrapper}>
                 <div className={styles.Type}>
-                    <div className={`${styles.option} ${styles.selected}`}>
-                        <span>Kup</span>
-                    </div>
-                    <div className={`${styles.option} ${styles.disabled}`}>
-                        <span>Sprzedaj</span>
+                    <div style={{ width: '100%', background: '#1f1d39', color: '#fff' }} className={`${styles.option} ${styles.selected}`}>
+                        <span>Chcę kupić</span>
                     </div>
                 </div>
                 <div className={styles.Currency}>
