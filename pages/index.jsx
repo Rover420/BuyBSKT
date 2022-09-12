@@ -12,7 +12,7 @@ export default function Home() {
     const [disabled, setDisabled] = useState();
     const [timer, setTimer] = useState(0);
     const [list, setList] = useState();
-    const [fiat, setFiat] = useState('USD');
+    const [fiat, setFiat] = useState('PLN');
 
 
 
@@ -29,7 +29,7 @@ export default function Home() {
                 `https://rk64tcf9ny.eu-west-1.awsapprunner.com/currencies/${currency}/calculate`, requestOptions);
             
             const ari = await arires.json();
-            setValue(ari.amount);
+            setValue(ari);
             setDisabled(false);
         } catch (err) {
             setDisabled(true);
@@ -70,8 +70,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>BSKT Purchase</title>
-        <meta name="description" content="BSKT Purchase" />
+        <title>BSKT Wymiana</title>
+        <meta name="description" content="BSKT Wymiana" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -85,14 +85,14 @@ export default function Home() {
       <div className={styles.main}>
       <Navbar />
       <div className={styles.wrapper}>
-      <h2>Exchange</h2>
+      <h2>Wymiana</h2>
             <div className={styles.panelwrapper}>
                 <div className={styles.Type}>
                     <div className={`${styles.option} ${styles.selected}`}>
-                        <span>Buy</span>
+                        <span>Kup</span>
                     </div>
                     <div className={`${styles.option} ${styles.disabled}`}>
-                        <span>Sell</span>
+                        <span>Sprzedaj</span>
                     </div>
                 </div>
                 <div className={styles.Currency}>
@@ -118,7 +118,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={styles.Offer}>
-                    <label htmlFor="cash">for</label>
+                    <label htmlFor="cash">za</label>
                     <input type="number" name="cash" id="cash" onChange={handleInput} defaultValue={500} />
                     <div className={styles.fiat} onClick={() => {list ? setList(false) : setList(true)}}>
                         <Image src={`/${fiat}Icon.svg`} width={22} height={22} />
@@ -140,7 +140,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className={`${styles.Buy} ${disabled ? styles.disabled : ''}`} onClick={start}>Buy {value ? currency === 'BNB' ? value.toFixed(8) : value.toFixed(2) : 0} {currency}</div>
+                <div className={`${styles.Buy} ${disabled ? styles.disabled : ''}`} onClick={start}>Kup {value ? value.code === 'BNB' ? (value.amount).toFixed(8) : (value.amount).toFixed(2) : 0} {value ? value.code : 'BSKT'}</div>
             </div>
             </div>
           </div>
