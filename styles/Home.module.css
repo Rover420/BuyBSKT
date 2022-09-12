@@ -209,7 +209,8 @@
   max-width: 800px;
   width: 80%; 
   height: auto;
-  aspect-ratio: 30 / 17.35;
+  aspect-ratio: 560 / 315;
+  padding: .5rem;
 }
 
 @keyframes fadein {
