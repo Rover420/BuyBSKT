@@ -9,7 +9,7 @@ const Navbar = () => {
                 <a href="https://basketcoin.io">
                     <Image className={styles.logo} src={'/logo.png'} width='204' height='43' priority />
                 </a>
-                <span className={styles.text}>Purchase</span>
+                <span className={styles.text}>Wymiana</span>
             </div>
         </nav>
      );
