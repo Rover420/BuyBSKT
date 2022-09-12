@@ -48,9 +48,10 @@ nav {
 }
 
 h2 {
-  margin: 12rem 0px 3rem 0px;
+  margin: 2.5rem;
   font-size: 40px;
   z-index: 5;
+  text-align: center;
 }
 
 @media screen and (max-width: 640px) {
