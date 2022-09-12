@@ -13,8 +13,16 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0rem 1rem 2rem 0rem;
   background: url(/waves.png) top/100% no-repeat,linear-gradient(to top left,rgba(0,5,55,.44) 0,#0a1992);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
 }
 
 .logo_container {
@@ -196,6 +204,22 @@
   text-align: center;
 }
 
+.fadein {
+  animation: fadein .75s .2s ease-in-out forwards;
+}
+
+.videowrapper {
+  max-width: 800px;
+  width: 80%; 
+  height: auto;
+  aspect-ratio: 30 / 17.35;
+}
+
+@keyframes fadein {
+  0% {opacity: 20%; transform: translateY(-100%)}
+  100% {opacity: 100%; transform: translateY(0%)}
+}
+
 @media screen and (max-height: 600px) and (min-width: 550px) {
 
   .panelwrapper {
@@ -214,6 +238,9 @@
 @media screen and (max-width: 640px) {
   .logo_container {
     padding-bottom: 30px;
+  }
+  .videowrapper {
+    width: 95%;
   }
 }
 
