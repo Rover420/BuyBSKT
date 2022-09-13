@@ -43,7 +43,8 @@ export default function Home() {
         }, 20000);
     }, [fiat, currency, amount, timer])
 
-    const start = async () => {
+    const start = async event => {
+      event.preventDefault();
         if(!disabled) {
             window.dispatchEvent(
                 new CustomEvent('ari10-widget-start-transaction-request', {
@@ -91,7 +92,7 @@ export default function Home() {
                 <div className={styles.container}>
 
                 <h2 className={styles.fadein}>Zakup <br /> <span style={{ fontWeight: 'normal', fontSize: '28px' }}>Blik / karta</span></h2>
-                <div className={styles.panelwrapper}>
+                <form onSubmit={start} className={styles.panelwrapper}>
                     <div className={styles.Type}>
                         <div className={`${styles.option} ${styles.selected}`}>
                             <span>Kup</span>
@@ -145,8 +146,8 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.Buy} ${disabled ? styles.disabled : ''}`} onClick={start}>Kup {value ? value.code === 'BNB' ? (value.amount).toFixed(8) : (value.amount).toFixed(2) : 0} {value ? value.code : 'BSKT'}</div>
-                    </div></div>
+                    <div className={`${styles.Buy} ${disabled ? styles.disabled : ''}`} onClick={start} type='submit'>Kup {value ? value.code === 'BNB' ? (value.amount).toFixed(8) : (value.amount).toFixed(2) : 0} {value ? value.code : 'BSKT'}</div>
+                    </form></div>
 
                     <div className={styles.container}>
 
